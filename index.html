@@ -11,14 +11,21 @@
         gtag('config', 'G-C4ZNL4CJVN');
     </script>
 </head> 
-<button onclick="gtag('event', 'click', {'event_category': 'Button', 'event_label': 'DummyButton'});">Click Me!</button>
+<button onclick="gtag('event', 'click', {
+ 'event_category': 'Button',
+ 'event_action': 'Click',
+ 'event_label': 'DummyButton'
+});">Click Me!</button>
 <body> 
 <h1>Welcome to the Dummy Page</h1>
-    <form action="/action_page.php">
-            <label for="fname">Phone No:</label><br>
-            <input type="num" id="phone" Phone No="phone" ><br>
-            <input type="submit" value="Submit">
-          </form>
+  <form onsubmit="gtag('event', 'submit', {
+  'event_category': 'Form',
+  'event_action': 'Submit',
+  'event_label': 'Phone No'
+})">
+  <!-- form fields go here -->
+  <input type="submit" value="Submit">
+</form>
 <p>This is a dummy page for Google Analytics testing.</p> 
 </body> 
 </html>
